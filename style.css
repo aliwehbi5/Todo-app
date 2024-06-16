@@ -104,6 +104,7 @@ section {
 }
 .task {
   border-bottom: 2px solid var(--gray-color);
+  word-break: break-word;
 }
 span.complete-btn {
   width: 24px;
