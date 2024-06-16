@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --light-red-color: #fb7a7a;
+  --gray-color: #777a92;
+  --text-color: #c5c8e3;
+  --input-bg: #25273c;
+  --blue-color: #3a7bfd;
+  --voilet-color: #c058f3;
+  --bg-color: #161722;
+  --main-transition: 0.3s;
+}
+.light {
+  --text-color: #161722;
+  --input-bg: white;
+}
+body {
+  font-family: "Josefin Sans", sans-serif !important;
+  background-color: var(--bg-color) !important;
+  min-height: 100vh;
+}
+.light body {
+  background-color: #e4e5f1 !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+.to-do-contianer {
+  max-width: 550px;
+}
+header {
+  background-image: url(https://todo-app-faha1999.vercel.app/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg);
+  background-size: 100% 280px;
+  height: 280px;
+}
+.light header {
+  background-image: url(https://todo-app-faha1999.vercel.app/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg);
+}
+@media (max-width: 768px) {
+  header {
+    background-image: url(imgs/dark-mobile.jpeg);
+    background-size: 100% 230px;
+    height: 230px;
+  }
+  .light header {
+    background-image: url(imgs/light-mobile.jpeg);
+  }
+}
+header .content {
+  max-width: 550px;
+}
+header .content h2 {
+  letter-spacing: 12px;
+}
+form button {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-color);
+  outline: none;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(2.2rem - 24px);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+header button:hover {
+  border-color: white;
+}
+.light header button:hover {
+  border-color: var(--text-color) !important;
+}
+header .input {
+  background-color: var(--input-bg);
+  outline: none;
+  color: var(--text-color);
+}
+header.input::placeholder {
+  color: var(--gray-color);
+}
+section:not(.pt-5) {
+  background-color: var(--input-bg);
+  border-radius: 0 0 7px 7px;
+}
+section {
+  color: var(--text-color);
+}
+.tasks.filled {
+  margin-top: -40px;
+}
+@media (max-width: 768px) {
+  .tasks.filled {
+    margin-top: -20px;
+  }
+}
+.task {
+  border-bottom: 2px solid var(--gray-color);
+}
+span.complete-btn {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-color);
+  position: relative;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.completed span.complete-btn {
+  background: linear-gradient(#57ddff, var(--voilet-color));
+}
+span.complete-btn:hover {
+  border-color: var(--voilet-color);
+}
+.completed span.complete-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: url(https://todo-app-faha1999.vercel.app/static/media/icon-check.a8fb15d0278c8e312df5.svg)
+    no-repeat 50%;
+  left: 0;
+}
+p.task-content {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+.completed .task-content {
+  color: var(--gray-color);
+  text-decoration: line-through;
+}
+.active {
+  color: var(--blue-color);
+}
+img.close-img,
+span.complete-btn,
+ul li,
+span.clear {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  ul.list-unstyled {
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--input-bg);
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 7px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    box-shadow: 0 10px 20px 1px hsla(0, 0%, 6%, 0.129);
+  }
+}
